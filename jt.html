@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPENJT</title>
+    <style>
+        #daohang{
+            background:linear-gradient(#ddd,rgb(249, 248, 248));
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 1700px;
+            border-radius: 5px 5px 0 0;
+            
+        }
+        .daohang{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        .daohang li a {
+            text-decoration:none;
+            color: black;
+        }
+        .daohang li a:hover{
+            background-color: #ddd;
+            color:chocolate;
+
+        }
+        .daohang li a:active{
+            background-color: #666;
+
+        }
+
+        .photobox{
+            width: 1000px;
+            height: 460px;
+            position: relative;
+        }
+        .imgbox{
+            position: absolute;
+            top: 100px;
+            left: 350px;
+            opacity: 0;
+        }
+        .imgbox:nth-child(1){
+            opacity: 1;
+
+        }
+        .leftbutton{
+            width: 35px;
+            height: 70px;
+            color: #ccc;
+            position: absolute;
+            top: 300px;
+            border-radius: 5px 0 0 5px;
+            left: 350px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 50px;
+        }
+        .rightbutton{
+            width: 35px;
+            height: 70px;
+            color: #ccc;
+            position: absolute;
+            top: 300px;
+            border-radius: 0 5px 5px 0;
+            left: 1315px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 50px;
+        }
+        .leftbutton:hover{
+            background-color: #00000050;
+            color: #fff;
+        }
+        .rightbutton:hover{
+            background-color: #00000050;
+            color: #fff;
+        }
+        .boxzd>ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+
+        }
+        .boxzd li{
+            width: 14px;
+            height: 14px;
+            border-radius: 100%;
+            background-color: #ccc;
+            float: left;
+            margin-right: 10px;
+        }
+        .boxzd{
+            position: absolute;
+            top: 520px;
+            left: 1200px;
+        }
+        .boxzd li:hover{
+            background-color: #fff;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="daohang">
+        <ul class="daohang"><li><img src="db9d676e06d94dc0481ce128b7ddacb620d2924b.png" alt="图片无法显示"  height="30px"></li>
+            <li><strong>OPENJT</strong></li>
+            <li><a href="#">产品简介</a></li>
+            <li><a href="#">应用场景</a></li>
+            <li><a href="#">多维探索</a></li>
+            <li><a href="#">立即下载</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="#">登录</a></li>
+        </ul>
+        
+    </div>
+    <div class="photobox">
+        <div class="imgbox"><img src="1.png" alt="无法显示该图片" width="1000" height="460"></div>
+        <div class="imgbox"><img src="2.png" alt="无法显示该图片" width="1000" height="460"></div>
+        <div class="imgbox"><img src="3.png" alt="无法显示该图片" width="1000" height="460"></div>
+        <div class="imgbox"><img src="4.png" alt="无法显示该图片" width="1000" height="460"></div>
+        <div class="imgbox"><img src="5.png" alt="无法显示该图片" width="1000" height="460"></div>
+        <div class="imgbox"><img src="6.png" alt="无法显示该图片" width="1000" height="460"></div>
+        <div class="leftbutton">&lt;</div>
+        <div class="leftbutton">&lt;</div>
+        <div class="rightbutton">&gt;</div>
+    </div>
+    <div class="boxzd">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="jquery-3.7.1.js"></script>
+    <script>
+        $(function(){
+            var index=0;
+            setInterval(function(){
+                if(index==$(".imgbox").length-1){
+                    index=0;
+                    $(".imgbox").css("opacity","0");
+                    $(".imgbox").eq(index).css("opacity","1");
+                }
+                else{
+                    index++;
+                    $(".imgbox").css("opacity","0");
+                    $(".imgbox").eq(index).css("opacity","1");
+                }
+                
+            },2000)
+        })
+    </script>
+
+
+</body>
+</html>
