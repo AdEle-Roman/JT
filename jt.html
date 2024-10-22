@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OPENJT</title>
     <style>
-        #daohang{
+        .search{
             background:linear-gradient(#ddd,rgb(249, 248, 248));
             text-align: center;
             position: fixed;
             top: 0;
             width: 1700px;
             border-radius: 5px 5px 0 0;
+            z-index: 2000;
             
         }
         .daohang{
@@ -34,9 +35,11 @@
         }
 
         .photobox{
-            width: 1000px;
+            width: 1700px;
             height: 460px;
             position: relative;
+           
+
         }
         .imgbox{
             position: absolute;
@@ -104,16 +107,119 @@
             background-color: #fff;
 
         }
+        .boxzd li:nth-child(1){
+            background-color: #fff;
+        }
+        .title1{
+            position:absolute;
+            top: 600px;
+            font-size: 50px;
+            text-align: center;
+            color:rgb(36, 35, 35);
+            
+        }
+        .lititle{
+            position: absolute;
+            top: 700px;
+            font-size: 30px;
+            color: #666;
+        }
+        .ctpicture1{
+            position: absolute;
+            top: 800px;
+            left: 1200px;
+        }
+        .xiaozw{
+            position: absolute;
+            top: 800px;
+            width: 1000px;
+        }
+        .biaodian1{
+            font-size: 60px;
+            position: relative;
+            left: 0;
+        }
+        .biaodian2{
+            font-size: 60px;
+            position: relative;
+            left: 900px;
+        }
+        .jianjie{
+            font-size: 25px;
+            position: relative;
+            left: 30px;
+            text-decoration: underline;
+            text-decoration-color: #666666ac;
+
+        }
+        .chanpintd{
+            position: absolute;
+            top: 1100px;
+            width: 1000px;
+            font-size: 25px;
+            color:#303030;
+            font-weight:900px;
+        }
+        #p2{
+            position: absolute;
+            top: 1400px;
+            width: 500px;
+        }
+        .yycj{
+            position: absolute;
+            top: 1400px;
+            left: 730px;
+            width: 800px;
+            font-size:30px;
+            color: #434343de;
+
+        }
+        .tpwz{position: relative;
+            left: 310px;
+            font-size: 20px;
+            top: -200px;
+            width: 500px;
+            color: rgb(131, 38, 5);
+
+        }
+        .tpwz1{position: relative;
+            left: 310px;
+            font-size: 20px;
+            top: -130px;
+            width: 500px;
+            color: rgb(131, 38, 5);
+
+        }
+        .tpwz2{position: relative;
+            left: 310px;
+            font-size: 20px;
+            top: -50px;
+            width: 500px;
+            color: rgb(131, 38, 5);
+
+        }
+        #pp2{
+            position: absolute;
+            top:670px;
+        }
+        #pp3{
+            position: absolute;
+            top:905px;
+        }
+
     </style>
 </head>
 <body>
-    <div id="daohang">
+    <div class="search">
         <ul class="daohang"><li><img src="db9d676e06d94dc0481ce128b7ddacb620d2924b.png" alt="图片无法显示"  height="30px"></li>
-            <li><strong>OPENJT</strong></li>
-            <li><a href="#">产品简介</a></li>
-            <li><a href="#">应用场景</a></li>
-            <li><a href="#">多维探索</a></li>
-            <li><a href="#">立即下载</a></li>
+            <li><strong>OpenJT</strong></li>
+            <li></li>
+            <li class="da"><a href="https://d.jotang.club/" target="_blank">关于我们</a></li>
+            <li class="da"><a href="#">产品简介</a></li>
+            <li class="da"><a href="#">应用场景</a></li>
+            <li class="da"><a href="https://developers.google.cn/ai/why-ai/" target="_blank">注重AI</a></li>
+            <li class="da"><a href="https://developers.google.cn/ai/discover/generativeai/" target="_blank">多维探索</a></li>
+            <li class="da"><a href="#">立即下载</a></li>
             <li></li>
             <li></li>
             <li></li>
@@ -130,38 +236,127 @@
         <div class="imgbox"><img src="5.png" alt="无法显示该图片" width="1000" height="460"></div>
         <div class="imgbox"><img src="6.png" alt="无法显示该图片" width="1000" height="460"></div>
         <div class="leftbutton">&lt;</div>
-        <div class="leftbutton">&lt;</div>
         <div class="rightbutton">&gt;</div>
     </div>
     <div class="boxzd">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li class="button"></li>
+            <li class="button"></li>
+            <li class="button"></li>
+            <li class="button"></li>
+            <li class="button"></li>
+            <li class="button"></li>
         </ul>
     </div>
     <script type="text/javascript" src="jquery-3.7.1.js"></script>
-    <script>
+    <script type="text/javascript">
+         var index=0;
         $(function(){
-            var index=0;
-            setInterval(function(){
+             setInterval(function(){
                 if(index==$(".imgbox").length-1){
                     index=0;
                     $(".imgbox").css("opacity","0");
                     $(".imgbox").eq(index).css("opacity","1");
+                    $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
                 }
                 else{
                     index++;
                     $(".imgbox").css("opacity","0");
                     $(".imgbox").eq(index).css("opacity","1");
+                    $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
                 }
                 
-            },2000)
+            },5000)
         })
+        $(".leftbutton").click(function(){
+            if(index==0){
+                index= $(".imgbox").length-1;
+                $(".imgbox").css("opacity","0");
+                $(".imgbox").eq(index).css("opacity","1");
+                $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
+            }
+            else{
+                index--;
+                $(".imgbox").css("opacity","0");
+                $(".imgbox").eq(index).css("opacity","1");
+                $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
+            }
+
+        })
+        $(".rightbutton").click(function(){
+            if(index==$(".imgbox").length-1){
+                index=0;
+                $(".imgbox").css("opacity","0");
+                $(".imgbox").eq(index).css("opacity","1");
+                $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
+            }
+            else{
+                index++;
+                $(".imgbox").css("opacity","0");
+                $(".imgbox").eq(index).css("opacity","1");
+                $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
+            }
+
+        })
+        $(".button").click(function(){
+            var indexx=$(this).index();
+            index=indexx;
+            $(".imgbox").css("opacity","0");
+            $(".imgbox").eq(index).css("opacity","1");
+            $(".button").css("background-color","#ccc");
+            $(".button").eq(index).css("background-color","#fff");
+        })
+       
+
     </script>
+
+<div class="title1">OpenJT:开启智能未来</div>
+<div class="lititle">你是否还在苦于工作效率低下，难以找到一个值得信赖的帮手？<strong><br>OpenJT将成为你的新选择。</strong>在多种场景下让你<strong>利器在握，成竹在胸。</strong>
+    也许就是你品尝一块焦糖饼干的时间，你的问题就已经在AI的帮助下迎刃而解。
+</div>
+<div class="xiaozw">
+    <div class="biaodian1">"</div>
+    <div class="jianjie"><i>OpenJT 是一家领先的人工智能公司，专注于开发创新的AI解决方案，以解决客户面临的复杂问题，简化生活，提高工作效率。我们的技术团队由一群充满激情的专家组成，他们致力于利用最新的AI技术，为客户提供高效、可靠的服务。<br>
+        <strong>我们的使命：</strong> 通过人工智能技术，推动社会进步，提高人们的生活质量。</i></div>
+       <div class="biaodian2">"</div>
+</div>
+<div class="chanpintd">
+    <ul>
+        <li>我们的产品特点：</li>
+        <li><strong>性能与效率：</strong>我们的AI产品经过精心设计，以确保在处理复杂任务时具有高性能和高效率，从而为客户节省宝贵的时间和资源。</li>
+        <li><strong>用户友好：</strong>我们的目标是使AI技术易于使用，无论用户的技术背景如何，都能快速上手，享受AI带来的便利。</li>
+        <li><strong>安全性：</strong>数据安全是我们的首要任务，我们采用最新的安全措施来保护客户的数据不受威胁。</li>
+        <li><strong>可扩展性：</strong>我们的解决方案设计灵活，可以轻松扩展，以满足客户不断变化的需求。</li>
+    </ul>
+</div>
+<div class="ctpicture">
+    <div class="ctpicture1"><img src="7.png" alt="无法显示图片"></div>
+    <div id="p2"><img src="8.png" alt="无法显示图片" width="700px" height="500px"></div>
+</div>
+<div class="yycj">
+    <h3>应用场景</h3>
+    <hr>
+    <p style="font-size: 25px;">AI 能够帮助人类应对重大科学挑战，这让我们欢欣鼓舞。凭借在机器学习、云基础设施、数据处理和分析方面取得的突破，OpenJT研究科学家和工程师不断在<strong>生物学、化学、物理学和地球科学领域</strong>开拓崭新道路。我们与全球研究机构通力协作，并通过科学论文和开源项目分享我们取得的进展。我们的共同目标是推动科学创新，塑造更美好的世界。<br>
+        同时我们也为不同行业的客户提供定制化的AI解决方案，包括但不限于<strong>金融、医疗、教育、零售和制造业</strong>。我们的AI解决方案能够帮助客户提高运营效率，降低成本，增强决策能力。
+    </p>
+    <div><img src="9.png" alt="图片无法显示" width="300px"></div>
+    <div class="tpwz"><b>更快、更准确地预报地球天气和气候</b><br>
+    天气和气候模式是在多种因素的复杂相互作用下形成的，比如洋流、风流、云、雨、太阳和地形。因此，要获得可靠的天气预报，需要很多台世界上最大的计算机进行数小时的计算。为了改变现状，OpenJT 研究人员积极致力于利用 ML 技术在极短时间内提供更精准的天气预报。</div>
+        <div><img src="10.png" alt="图片无法显示" width="300px" id="pp2"></div>
+        <div class="tpwz1"><b>聆听鸟鸣，了解生物多样性 </b> <br>
+        这里是物种丰富的生态系统，还是空荡荡的森林？这个问题有时很难回答；但对于致力了解气候变化影响或保护措施效果的科学家来说，答案至关重要。我们的研究人员另辟蹊径，开发了能根据鸟鸣衡量和了解生物多样性的新工具。</div>
+            <div><img src="11.png" alt="图片无法显示" width="300px" id="pp3"></div>
+        <div class="tpwz2"><b>绘制大脑图谱，破解思维之谜</b><br>
+            构成大脑的细胞群是如何协作，让人体能运动、产生思想与感觉的呢？为了探寻这个问题的答案，OpenJT研究人员利用 ML 技术绘制了一些展现惊人细节的人类大脑图谱，从而对神经元如何形成网络来共享和处理信息有了新的见解，揭示了前所未有的发现。</div>
+    </div>
+
+
 
 
 </body>
